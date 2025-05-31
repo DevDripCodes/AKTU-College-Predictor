@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UPTAC College Predictor</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    form {
+      background: white;
+      padding: 20px 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 10px;
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #005fa3;
+    }
+  </style>
+</head>
+<body>
+
+  <form action="/predict" method="post">
+    <h2>UPTAC College Predictor</h2>
+    <label for="crl_rank">CRL Rank</label>
+    <input type="number" id="crl_rank" name="crl_rank" placeholder="Enter your CRL rank" required min="1">
+
+
+    <label for="round">Round</label>
+    <select id="round" name="round" required>
+      <option value="1">Round 1</option>
+      <option value="2">Round 2</option>
+      <option value="3">Round 3</option>
+      <option value="4">Round 4</option>
+    </select>
+
+    <label for="quota">Quota</label>
+    <select id="quota" name="quota" required>
+      <option value="All India">All India</option>
+      <option value="Home State">Home State</option>
+    </select>
+
+    <label for="category">Category</label>
+    <select id="category" name="category" required>
+      <option value="SC(AF)">SC(AF)</option>
+        <option value="BC">BC</option>
+        <option value="SC">SC</option>
+        <option value="OPEN">OPEN</option>
+        <option value="OPEN(TF)">OPEN(TF)</option>
+        <option value="OPEN(GIRL)">OPEN(GIRL)</option>
+        <option value="SC(Girl)">SC(Girl)</option>
+        <option value="BC(Girl)">BC(Girl)</option>
+        <option value="ST">ST</option>
+        <option value="EWS(GL)">EWS(GL)</option>
+        <option value="EWS(OPEN)">EWS(OPEN)</option>
+        <option value="BC(AF)">BC(AF)</option>
+        <option value="OPEN(AF)">OPEN(AF)</option>
+        <option value="ST(Girl)">ST(Girl)</option>
+        <option value="EWS(AF)">EWS(AF)</option>
+        <option value="OPEN(FF)">OPEN(FF)</option>
+        <option value="BC(FF)">BC(FF)</option>
+        <option value="OPEN(PH)">OPEN(PH)</option>
+        <option value="BC(PH)">BC(PH)</option>
+        <option value="SC(FF)">SC(FF)</option>
+        <option value="SC(PH)">SC(PH)</option>
+        <option value="EWS(PH)">EWS(PH)</option>
+        <option value="EWS(FF)">EWS(FF)</option>
+    </select>
+
+    <label for="gender">Gender</label>
+    <select id="gender" name="gender" required>
+      <option value="Both Male and Female Seats">Both Male and Female Seats</option>
+      <option value="Female Seats">Female Seats</option>
+    </select>
+
+    <button type="submit">Predict Colleges</button>
+  </form>
+
+</body>
+</html>
