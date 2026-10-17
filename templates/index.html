@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore UPTAC college possibilities using your JEE Main CRL rank and 2024 cutoff data.">
+  <title>UPTAC College Predictor</title>
+  <style>
+    :root { color-scheme: light; --ink:#17233c; --muted:#63708a; --blue:#315efb; --blue-dark:#254bd4; --line:#e2e8f2; }
+    * { box-sizing:border-box; }
+    body { min-height:100vh; margin:0; color:var(--ink); font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:radial-gradient(ellipse at 12% 10%,rgba(194,219,255,.7),transparent 34rem),radial-gradient(ellipse at 92% 88%,rgba(213,244,237,.68),transparent 31rem),#f6f8fc; }
+    .page-shell { width:min(1100px,calc(100% - 48px)); min-height:100vh; margin:0 auto; padding:64px 0; display:grid; grid-template-columns:.88fr 1.12fr; align-items:center; gap:clamp(36px,7vw,84px); }
+    .brand { display:inline-flex; align-items:center; gap:11px; color:#314365; font-size:13px; font-weight:750; letter-spacing:.04em; text-transform:uppercase; }
+    .brand-mark { width:38px; height:38px; display:grid; place-items:center; border-radius:12px; color:#fff; background:linear-gradient(145deg,#4278ff,#2448d7); box-shadow:0 8px 18px rgba(49,94,251,.2); font-size:19px; font-weight:800; }
+    .intro h1 { max-width:460px; margin:30px 0 16px; font-size:clamp(38px,5vw,58px); line-height:1.04; letter-spacing:-.055em; }
+    .intro-copy { max-width:430px; margin:0; color:var(--muted); font-size:17px; line-height:1.7; }
+    .info-card { max-width:430px; margin-top:34px; padding:19px 21px; border:1px solid rgba(213,222,237,.85); border-radius:18px; background:rgba(255,255,255,.66); }
+    .info-title { margin:0 0 7px; font-size:14px; font-weight:750; }
+    .info-copy { margin:0; color:var(--muted); font-size:13px; line-height:1.55; }
+    .form-card { padding:clamp(25px,4vw,38px); border:1px solid rgba(226,232,242,.95); border-radius:24px; background:#fff; box-shadow:0 24px 70px rgba(31,51,88,.1),0 3px 10px rgba(31,51,88,.04); }
+    .form-heading { margin-bottom:27px; }
+    .eyebrow { margin:0 0 8px; color:var(--blue); font-size:11px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
+    h2 { margin:0; font-size:25px; letter-spacing:-.035em; }
+    .form-subtitle { margin:8px 0 0; color:var(--muted); font-size:14px; line-height:1.5; }
+    .form-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:19px 16px; }
+    .field { min-width:0; }
+    .field-wide { grid-column:1 / -1; }
+    label { display:block; margin-bottom:8px; color:#34415a; font-size:13px; font-weight:700; }
+    input,select { width:100%; min-height:48px; padding:0 13px; border:1px solid #d8dfeb; border-radius:11px; outline:none; color:var(--ink); background:#fff; font:inherit; font-size:14px; transition:border-color .15s,box-shadow .15s; }
+    input::placeholder { color:#9aa5b8; }
+    input:focus,select:focus { border-color:#7894ff; box-shadow:0 0 0 4px rgba(49,94,251,.11); }
+    .error { margin:0 0 20px; padding:12px 14px; border:1px solid #f1b8b8; border-radius:10px; color:#9e2828; background:#fff4f3; font-size:13px; line-height:1.45; }
+    .submit-button { width:100%; min-height:51px; margin-top:23px; border:0; border-radius:12px; color:#fff; background:var(--blue); box-shadow:0 9px 18px rgba(49,94,251,.19); cursor:pointer; font:inherit; font-size:15px; font-weight:750; transition:transform .15s,background .15s,box-shadow .15s; }
+    .submit-button:hover { transform:translateY(-1px); background:var(--blue-dark); box-shadow:0 12px 22px rgba(49,94,251,.25); }
+    .submit-button:focus-visible,a:focus-visible { outline:3px solid rgba(49,94,251,.35); outline-offset:3px; }
+    .form-footnote { margin:14px 0 0; color:#7c879a; text-align:center; font-size:12px; line-height:1.5; }
+    @media(max-width:850px) { .page-shell { max-width:650px; padding:42px 0; grid-template-columns:1fr; gap:30px; } .intro h1 { margin-top:22px; font-size:46px; } .intro-copy { font-size:15px; } .info-card { display:none; } }
+    @media(max-width:520px) { .page-shell { width:min(calc(100% - 28px),480px); padding:28px 0; gap:22px; } .intro h1 { margin:18px 0 10px; font-size:39px; } .brand-mark { width:34px; height:34px; } .form-card { padding:23px 19px; border-radius:20px; } .form-grid { grid-template-columns:1fr; gap:16px; } .field-wide { grid-column:auto; } h2 { font-size:23px; } }
+  </style>
+</head>
+<body>
+  <main class="page-shell">
+    <section class="intro" aria-labelledby="page-title">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">U</span><span>UPTAC · College Predictor</span></div>
+      <h1 id="page-title">Find a college that fits your rank.</h1>
+      <p class="intro-copy">Explore possible UPTAC choices with your JEE Main CRL rank and the 2024 counselling cutoff data.</p>
+      <aside class="info-card"><p class="info-title">A quick guide</p><p class="info-copy">Enter your CRL rank, then choose the counselling round and seat details. Results are sorted from the closest closing rank.</p></aside>
+    </section>
+    <section class="form-card" aria-labelledby="form-title">
+      <div class="form-heading"><p class="eyebrow">Your college search</p><h2 id="form-title">Enter your details</h2><p class="form-subtitle">Use the same category and quota you plan to select during counselling.</p></div>
+      {% if error %}<p class="error" role="alert">{{ error }}</p>{% endif %}
+      <form action="{{ url_for('predict') }}" method="post">
+        <div class="form-grid">
+          <div class="field field-wide"><label for="crl_rank">JEE Main CRL rank</label><input type="number" id="crl_rank" name="crl_rank" placeholder="For example, 125000" min="1" step="1" inputmode="numeric" value="{{ form_data.get('crl_rank', '') }}" required></div>
+          <div class="field"><label for="round">Counselling round</label><select id="round" name="round" required><option value="" disabled {% if not form_data.get('round') %}selected{% endif %}>Select round</option>{% for value in options.round %}<option value="{{ value }}" {% if form_data.get('round') == value %}selected{% endif %}>{{ value }}</option>{% endfor %}</select></div>
+          <div class="field"><label for="quota">Quota</label><select id="quota" name="quota" required><option value="" disabled {% if not form_data.get('quota') %}selected{% endif %}>Select quota</option>{% for value in options.quota %}<option value="{{ value }}" {% if form_data.get('quota') == value %}selected{% endif %}>{{ value }}</option>{% endfor %}</select></div>
+          <div class="field"><label for="category">Category</label><select id="category" name="category" required><option value="" disabled {% if not form_data.get('category') %}selected{% endif %}>Select category</option>{% for value in options.category %}<option value="{{ value }}" {% if form_data.get('category') == value %}selected{% endif %}>{{ value }}</option>{% endfor %}</select></div>
+          <div class="field"><label for="gender">Seat type</label><select id="gender" name="gender" required><option value="" disabled {% if not form_data.get('gender') %}selected{% endif %}>Select seat type</option>{% for value in options.gender %}<option value="{{ value }}" {% if form_data.get('gender') == value %}selected{% endif %}>{{ value }}</option>{% endfor %}</select></div>
+        </div>
+        <button class="submit-button" type="submit">Show matching colleges <span aria-hidden="true">→</span></button>
+        <p class="form-footnote">Based on historical cutoffs. Actual allotments can vary each year.</p>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
