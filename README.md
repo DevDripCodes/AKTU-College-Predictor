@@ -14,7 +14,7 @@ A small Flask app that uses a JEE Main CRL rank to find possible colleges from U
 
 ## Deploy on Vercel
 
-Import this repository as a Vercel project and deploy with the default Python settings. Vercel detects the Flask app from app.py. The vercel.json configuration explicitly includes the Jinja templates and cutoff CSV used at runtime.
+Import this repository as a Vercel project and deploy with the Flask framework preset. Vercel detects the Flask app from the root-level app.py, so no functions override is needed.
 
 The app compares your CRL rank with each matching row's closing rank. Results whose closing rank is equal to or greater than your rank are shown, sorted by closing rank.
 
